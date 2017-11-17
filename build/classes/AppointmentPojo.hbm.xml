@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 17, 2017 9:07:04 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.demo.AppointmentPojo" table="APPOINTMENTPOJO">
+        <id name="appId" type="int">
+            <column name="APPID" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="hospRegNum" class="com.demo.HospitalPojo" fetch="join" lazy="false">
+            <column name="HOSPREGNUM" />
+        </many-to-one>
+        <many-to-one name="email" class="com.demo.LoginPojoClass" fetch="join" lazy="false">
+            <column name="EMAIL" />
+        </many-to-one>
+        <many-to-one name="doctRegNum" class="com.demo.Doctor" fetch="join" lazy="false">
+            <column name="DOCTREGNUM" />
+        </many-to-one>
+        <property name="disease" type="java.lang.String">
+            <column name="DISEASE" />
+        </property>
+        <property name="appDate" type="java.lang.String">
+            <column name="APPDATE" />
+        </property>
+        <property name="appTime" type="java.lang.String">
+            <column name="APPTIME" />
+        </property>
+        <property name="status" type="java.lang.String">
+            <column name="STATUS" />
+        </property>
+    </class>
+</hibernate-mapping>

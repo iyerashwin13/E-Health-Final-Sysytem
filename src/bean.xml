@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="dataSource" class="org.apache.tomcat.dbcp.dbcp2.BasicDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver">
+		</property>
+		<property name="url" value="jdbc:mysql://localhost:3306/hospital">
+		</property>
+		<property name="username" value="root"></property>
+		<property name="password" value="root"></property>
+	</bean>
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="mappingResources">
+			<list>
+				<value>LoginPojoClass.hbm.xml</value>
+				<value>HospitalPojo.hbm.xml</value>
+				<value>Doctor.hbm.xml</value>
+				<value>PatientProfile.hbm.xml</value>
+				<value>DoctorUpdateProfile.hbm.xml</value>
+				<value>AppointmentPojo.hbm.xml</value>
+				<value>PrescriptionPojo.hbm.xml</value>
+				<value>BillingPojo.hbm.xml</value>
+				<value>Slot.hbm.xml</value>
+			</list>
+		</property>
+
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.show_sql">true</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="template" class="org.springframework.orm.hibernate3.HibernateTemplate">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="obj" class="com.demo.LoginDao">
+		<property name="template" ref="template"></property>
+	</bean>
+	
+	<bean id="hospitalDao" class="com.demo.HospitalDao">
+		<property name="template" ref="template"></property>
+	</bean>
+	
+	<bean id="doctorDao" class="com.demo.DoctorDao">
+		<property name="template" ref="template"></property>
+	</bean>
+	
+	<bean id="prescDao" class="com.demo.PrescriptionDao">
+		<property name="template" ref="template"></property>
+	</bean>
+	
+	
+	
+	
+	<bean id="patientUpdateProfileDao" class="com.demo.PatientProfileDao1">
+		<property name="template" ref="template"></property>
+	</bean>
+	
+	<bean id="DUpdateDao" class="com.demo.DoctorUpdateProfileDao">
+		<property name="template" ref="template"></property>
+	</bean>
+	<bean id="AppointmentDao" class="com.demo.AppointmentDao">
+		<property name="template" ref="template"></property>
+	</bean>
+	
+	<bean id="BillingDao" class="com.demo.BillingDao">
+		<property name="template" ref="template"></property>
+	</bean>
+	
+	<bean id="SlotDao" class="com.demo.SlotDao">
+		<property name="template" ref="template"></property>
+	</bean>
+</beans>

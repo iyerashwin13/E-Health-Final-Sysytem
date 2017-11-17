@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+	<bean id="multipartResolver"   
+	       class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>  
+	
+	<bean name="/sign.html" class="com.demo.ControllerLogin"></bean>
+	<bean name="/PatientLogin.html" class="com.demo.PatientLoginController"></bean>
+		
+	<bean name="/InsertHospital.html" class="com.demo.HospitalRegisterController"></bean>
+	<bean name="/ValidateHospital.html" class="com.demo.HospitalLoginController"></bean>
+	
+	<bean name="/InsertDoctor.html" class="com.demo.DoctorRegisterController"></bean>
+	<bean name="/ValidateDoctor.html" class="com.demo.DoctorLoginController"></bean>
+	
+	<bean name="/InsertPatientProfile.html" class="com.demo.PatientUpdateController"></bean>
+	
+	<bean name="/InsertDoctorProfile.html" class="com.demo.DoctorUpdateProfileController"></bean>
+	
+	<bean name="/bookAppoimentController.html" class="com.demo.bookAppoimentController"></bean>
+	
+	<bean name="/ApproveAppontmentController.html" class="com.demo.ApproveAppontmentController"></bean>
+	
+	<bean name="/BillingController.html" class="com.demo.BillingController"></bean>
+	
+	<bean name="/Logout.html" class="com.demo.LogoutController"></bean> 
+
+	<bean name="/dPrescription.html" class="com.demo.PrescriptionController"></bean>
+
+ 		
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/"></property>
+		<property name="suffix" value=".jsp"></property>
+	</bean>
+	
+	
+</beans>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 19, 2017 10:40:35 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.demo.PrescriptionPojo" table="PRESCRIPTIONPOJO">
+        <id name="pid" type="java.lang.String">
+            <column name="PID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="email" class="com.demo.LoginPojoClass" fetch="join" lazy="false">
+            <column name="EMAIL" />
+        </many-to-one>
+        <many-to-one name="doctRegNo" class="com.demo.Doctor" fetch="join" lazy="false">
+            <column name="DOCTREGNO" />
+        </many-to-one>
+        <property name="diseases" type="java.lang.String">
+            <column name="DISEASES" />
+        </property>
+        <property name="med" type="java.lang.String">
+            <column name="MED" />
+        </property>
+        <property name="medname" type="java.lang.String">
+            <column name="MEDNAME" />
+        </property>
+        <property name="dose" type="java.lang.String">
+            <column name="DOSE" />
+        </property>
+        <property name="medquantity" type="java.lang.String">
+            <column name="MEDQUANTITY" />
+        </property>
+        <property name="remark" type="java.lang.String">
+            <column name="REMARK" />
+        </property>
+        <property name="prescrDate" type="java.lang.String">
+            <column name="PRESCRDATE" />
+        </property>
+    </class>
+</hibernate-mapping>

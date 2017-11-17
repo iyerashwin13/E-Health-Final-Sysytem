@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 17, 2017 9:07:04 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.demo.BillingPojo" table="BILLINGPOJO">
+        <id name="billId" type="java.lang.String">
+            <column name="BILLID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="email" class="com.demo.LoginPojoClass" fetch="join" lazy="false">
+            <column name="EMAIL" />
+        </many-to-one>
+        <many-to-one name="hospRegNum" class="com.demo.HospitalPojo" fetch="join" lazy="false">
+            <column name="HOSPREGNUM" />
+        </many-to-one>
+        <property name="chargeFor" type="java.lang.String">
+            <column name="CHARGEFOR" />
+        </property>
+        <property name="fromDate" type="java.lang.String">
+            <column name="FROMDATE" />
+        </property>
+        <property name="toDate" type="java.lang.String">
+            <column name="TODATE" />
+        </property>
+        <property name="amount" type="java.lang.String">
+            <column name="AMOUNT" />
+        </property>
+    </class>
+</hibernate-mapping>

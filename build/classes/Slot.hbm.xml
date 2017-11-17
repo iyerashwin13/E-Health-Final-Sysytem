@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 18, 2017 1:56:18 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.demo.Slot" table="SLOT">
+        <id name="slotId" type="int">
+            <column name="SLOTID" />
+            <generator class="increment" />
+        </id>
+        <property name="slot" type="java.lang.String">
+            <column name="SLOT" />
+        </property>
+    </class>
+</hibernate-mapping>

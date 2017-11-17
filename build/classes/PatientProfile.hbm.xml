@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 17, 2017 9:07:04 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.demo.PatientProfile" table="PATIENTPROFILE">
+        <id name="adharNo" type="java.lang.String">
+            <column name="ADHARNO" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="email" class="com.demo.LoginPojoClass" fetch="join" lazy="false">
+            <column name="EMAIL" />
+        </many-to-one>
+        <property name="addr" type="java.lang.String">
+            <column name="ADDR" />
+        </property>
+        <property name="dob" type="java.lang.String">
+            <column name="DOB" />
+        </property>
+        <property name="occupation" type="java.lang.String">
+            <column name="OCCUPATION" />
+        </property>
+        <property name="height" type="java.lang.String">
+            <column name="HEIGHT" />
+        </property>
+        <property name="weight" type="java.lang.String">
+            <column name="WEIGHT" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 17, 2017 9:07:04 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.demo.LoginPojoClass" table="PATIENT">
+        <id name="email" type="java.lang.String">
+            <column name="EMAIL" />
+            <generator class="assigned" />
+        </id>
+        <property name="fname" type="java.lang.String">
+            <column name="FNAME" />
+        </property>
+        <property name="mobnum" type="java.lang.String">
+            <column name="MOBNUM" />
+        </property>
+        <property name="gender" type="java.lang.String">
+            <column name="GENDER" />
+        </property>
+        <property name="bloodGroup" type="java.lang.String">
+            <column name="BLOODGROUP" />
+        </property>
+        <property name="marStatus" type="java.lang.String">
+            <column name="MARSTATUS" />
+        </property>
+        <property name="password" type="java.lang.String">
+            <column name="PASSWORD" />
+        </property>
+        <property name="image" type="java.lang.String">
+            <column name="IMAGE" />
+        </property>
+    </class>
+</hibernate-mapping>

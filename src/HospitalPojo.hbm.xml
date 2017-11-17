@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 17, 2017 9:07:04 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.demo.HospitalPojo" table="HOSPITAL">
+        <id name="hospRegNum" type="java.lang.String">
+            <column name="HOSPREGNUM" />
+            <generator class="assigned" />
+        </id>
+        <property name="hospName" type="java.lang.String">
+            <column name="HOSPNAME" />
+        </property>
+        <property name="hospAdd" type="java.lang.String">
+            <column name="HOSPADD" />
+        </property>
+        <property name="hospCity" type="java.lang.String">
+            <column name="HOSPCITY" />
+        </property>
+        <property name="area" type="java.lang.String">
+            <column name="AREA" />
+        </property>
+        <property name="pinCode" type="java.lang.String">
+            <column name="PINCODE" />
+        </property>
+        <property name="spec" type="java.lang.String">
+            <column name="SPEC" />
+        </property>
+        <property name="hContact" type="java.lang.String" access="field">
+            <column name="HCONTACT" />
+        </property>
+        <property name="email" type="java.lang.String">
+            <column name="EMAIL" />
+        </property>
+        <property name="password" type="java.lang.String">
+            <column name="PASSWORD" />
+        </property>
+        <property name="image" type="java.lang.String">
+            <column name="IMAGE" />
+        </property>
+    </class>
+</hibernate-mapping>
